@@ -17,6 +17,7 @@ legal = False #日期是否合法的标志位
 month1 = (1,3,5,7,8,10,12)
 month2 = (4,6,9,11)
 year,month,day = (int(x) for x in date.split('-'))
+print('%s-%s-%s'%(year,month,day),end=' ')
 if month in month1:
     if day>=1 and day<= 31:
         legal = True
@@ -26,12 +27,13 @@ elif month in month2:
 elif month == 2:
     if (year%4==0 and  year%100!=0) or year%400==0: #判断是否是闰年
         leap = True
-        if leap == True:
-            if day>=1 and day <=29:
-                legal = True
-        else:
-            if day>=1 and day <=28:
-                legal = True
+    if leap == True:
+        if day>=1 and day <=29:
+            legal = True
+    else:
+        if day>=1 and day <=28:
+            legal = True
+
 if legal == True:
     print('日期合法！')
 else:
