@@ -14,6 +14,7 @@ import datetime
 '''
 计算距离某日期X天是什么日期?
 其中X可正可负。
+这里以正数为例，负数同理
 '''
 # 1.获取当前日期
 curr_datetime = datetime.datetime.now().strftime('%Y-%m-%d')
